@@ -24,19 +24,9 @@ describe('Seo', () => {
   };
 
   test('renders Seo without errors', () => {
-    render(
-      <Seo
-        title={'Test Title'}
-        titleForTitleTag={'Test Title for Title Tag'}
-        description={'Test Description'}
-        image={'/test-image.png'}
-        isHomePage={false}
-        searchOrder={123}
-      />,
-      {
-        container: document.body.appendChild(document.createElement('head')),
-      }
-    );
+    render(<Seo {...defaultProps} />, {
+      container: document.head,
+    });
 
     expect(document.title).toBe(defaultProps.titleForTitleTag + ' – React');
     // Add additional assertions as needed
