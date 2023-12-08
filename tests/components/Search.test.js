@@ -1,7 +1,6 @@
 import {render, screen, act} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import {Search} from '../../src/components/Search';
-import {siteConfig} from '../../src/siteConfig';
 
 jest.mock('@docsearch/react/modal', () => ({
   __esModule: true,
