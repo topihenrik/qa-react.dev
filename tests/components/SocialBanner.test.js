@@ -1,26 +1,25 @@
-import {render, screen, act} from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import {render, screen} from '@testing-library/react';
 import SocialBanner from '../../src/components/SocialBanner';
 
-// Rendering Test
-test('renders SocialBanner without errors', () => {
-  render(<SocialBanner />);
-  const bannerTextElement = screen.getByText('Support Ukraine 🇺🇦');
-  const bannerLinkElement = screen.getByText(
-    'Help Provide Humanitarian Aid to Ukraine'
-  );
-  expect(bannerTextElement).toBeInTheDocument();
-  expect(bannerLinkElement).toBeInTheDocument();
-});
+describe('SocialBanner', () => {
+  it('Should render without errors', () => {
+    render(<SocialBanner />);
+    const bannerTextElement = screen.getByText('Support Ukraine 🇺🇦');
+    const bannerLinkElement = screen.getByText(
+      'Help Provide Humanitarian Aid to Ukraine'
+    );
+    expect(bannerTextElement).toBeInTheDocument();
+    expect(bannerLinkElement).toBeInTheDocument();
+  });
 
-// Link Href Test
-test('renders SocialBanner with correct link href', () => {
-  render(<SocialBanner />);
-  const bannerLinkElement = screen.getByText(
-    'Help Provide Humanitarian Aid to Ukraine'
-  );
-  expect(bannerLinkElement).toHaveAttribute(
-    'href',
-    'https://opensource.fb.com/support-ukraine'
-  );
+  it('Should render with correct link href', () => {
+    render(<SocialBanner />);
+    const bannerLinkElement = screen.getByText(
+      'Help Provide Humanitarian Aid to Ukraine'
+    );
+    expect(bannerLinkElement).toHaveAttribute(
+      'href',
+      'https://opensource.fb.com/support-ukraine'
+    );
+  });
 });
