@@ -2,8 +2,8 @@
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
 
-import Breadcrumbs from 'components/Breadcrumbs';
-import Tag from 'components/Tag';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Tag from '../components/Tag';
 import {H1} from './MDX/Heading';
 import type {RouteTag, RouteItem} from './Layout/getRouteMeta';
 import * as React from 'react';
